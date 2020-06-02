@@ -1,0 +1,110 @@
+error:
+
+   default: + export KAFKA_INSTALL_ROOT=/opt
+    default: + export KAFKA_HOSTNAME=192.168.100.67
+    default: + export KAFKA_VERSION=1.0.2
+    default: + export KAFKA_SCALA_VERSION=2.11
+    default: + export REPOSITORY_ROOT=/vagrant
+    default: + sh /vagrant/vagrant/install_cluster.sh
+    default: + TOXIPROXY_VERSION=2.1.4
+    default: + mkdir -p /opt
+    default: + [ ! -f /opt/kafka-1.0.2.tgz ]
+    default: + wget --quiet https://archive.apache.org/dist/kafka/1.0.2/kafka_2.11-1.0.2.tgz -O /opt/kafka-1.0.2.tgz
+    default: + [ ! -f /opt/toxiproxy-2.1.4 ]
+    default: + wget --quiet https://github.com/Shopify/toxiproxy/releases/download/v2.1.4/toxiproxy-server-linux-amd64 -O /opt/toxiproxy-2.1.4
+    default: + chmod +x /opt/toxiproxy-2.1.4
+    default: + rm -f /opt/toxiproxy
+    default: + ln -s /opt/toxiproxy-2.1.4 /opt/toxiproxy
+    default: + ZK_PORT=2181
+    default: + ZK_PORT_REAL=21801
+    default: + KAFKA_PORT=9091
+    default: + KAFKA_PORT_REAL=29091
+    default: + mkdir -p /opt/kafka-9091
+    default: + tar xzf /opt/kafka-1.0.2.tgz -C /opt/kafka-9091 --strip-components 1
+    default: + mkdir -p /opt/kafka-9091/data
+    default: + printf \n\n
+    default: + cat
+    default: + cp /vagrant/vagrant/zookeeper.properties /opt/kafka-9091/config/
+    default: + sed -i s/KAFKAID/9091/g /opt/kafka-9091/config/zookeeper.properties
+    default: + sed -i s/ZK_PORT/21801/g /opt/kafka-9091/config/zookeeper.properties
+    default: + ZK_DATADIR=/opt/zookeeper-2181
+    default: + mkdir -p /opt/zookeeper-2181
+    default: + sed -i s#ZK_DATADIR#/opt/zookeeper-2181#g /opt/kafka-9091/config/zookeeper.properties
+    default: + echo 1
+    default: + ZK_PORT=2182
+    default: + ZK_PORT_REAL=21802
+    default: + KAFKA_PORT=9092
+    default: + KAFKA_PORT_REAL=29092
+    default: + mkdir -p /opt/kafka-9092
+    default: + tar xzf /opt/kafka-1.0.2.tgz -C /opt/kafka-9092 --strip-components 1
+    default: + mkdir -p /opt/kafka-9092/data
+    default: + printf \n\n
+    default: + cat
+    default: + cp /vagrant/vagrant/zookeeper.properties /opt/kafka-9092/config/
+    default: + sed -i s/KAFKAID/9092/g /opt/kafka-9092/config/zookeeper.properties
+    default: + sed -i s/ZK_PORT/21802/g /opt/kafka-9092/config/zookeeper.properties
+    default: + ZK_DATADIR=/opt/zookeeper-2182
+    default: + mkdir -p /opt/zookeeper-2182
+    default: + sed -i s#ZK_DATADIR#/opt/zookeeper-2182#g /opt/kafka-9092/config/zookeeper.properties
+    default: + echo 2
+    default: + ZK_PORT=2183
+    default: + ZK_PORT_REAL=21803
+    default: + KAFKA_PORT=9093
+    default: + KAFKA_PORT_REAL=29093
+    default: + mkdir -p /opt/kafka-9093
+    default: + tar xzf /opt/kafka-1.0.2.tgz -C /opt/kafka-9093 --strip-components 1
+    default: + mkdir -p /opt/kafka-9093/data
+    default: + printf \n\n
+    default: + cat
+    default: + cp /vagrant/vagrant/zookeeper.properties /opt/kafka-9093/config/
+    default: + sed -i s/KAFKAID/9093/g /opt/kafka-9093/config/zookeeper.properties
+    default: + sed -i s/ZK_PORT/21803/g /opt/kafka-9093/config/zookeeper.properties
+    default: + ZK_DATADIR=/opt/zookeeper-2183
+    default: + mkdir -p /opt/zookeeper-2183
+    default: + sed -i s#ZK_DATADIR#/opt/zookeeper-2183#g /opt/kafka-9093/config/zookeeper.properties
+    default: + echo 3
+    default: + ZK_PORT=2184
+    default: + ZK_PORT_REAL=21804
+    default: + KAFKA_PORT=9094
+    default: + KAFKA_PORT_REAL=29094
+    default: + mkdir -p /opt/kafka-9094
+    default: + tar xzf /opt/kafka-1.0.2.tgz -C /opt/kafka-9094 --strip-components 1
+    default: + mkdir -p /opt/kafka-9094/data
+    default: + printf \n\n
+    default: + cat
+    default: + cp /vagrant/vagrant/zookeeper.properties /opt/kafka-9094/config/
+    default: + sed -i s/KAFKAID/9094/g /opt/kafka-9094/config/zookeeper.properties
+    default: + sed -i s/ZK_PORT/21804/g /opt/kafka-9094/config/zookeeper.properties
+    default: + ZK_DATADIR=/opt/zookeeper-2184
+    default: + mkdir -p /opt/zookeeper-2184
+    default: + sed -i s#ZK_DATADIR#/opt/zookeeper-2184#g /opt/kafka-9094/config/zookeeper.properties
+    default: + echo 4
+    default: + ZK_PORT=2185
+    default: + ZK_PORT_REAL=21805
+    default: + KAFKA_PORT=9095
+    default: + KAFKA_PORT_REAL=29095
+    default: + mkdir -p /opt/kafka-9095
+    default: + tar xzf /opt/kafka-1.0.2.tgz -C /opt/kafka-9095 --strip-components 1
+    default: + mkdir -p /opt/kafka-9095/data
+    default: + printf \n\n
+    default: + cat
+    default: + cp /vagrant/vagrant/zookeeper.properties /opt/kafka-9095/config/
+    default: + sed -i s/KAFKAID/9095/g /opt/kafka-9095/config/zookeeper.properties
+    default: + sed -i s/ZK_PORT/21805/g /opt/kafka-9095/config/zookeeper.properties
+    default: + ZK_DATADIR=/opt/zookeeper-2185
+    default: + mkdir -p /opt/zookeeper-2185
+    default: + sed -i s#ZK_DATADIR#/opt/zookeeper-2185#g /opt/kafka-9095/config/zookeeper.properties
+    default: + echo 5
+    default: + sh /vagrant/vagrant/setup_services.sh
+    default: + 
+    default: stop
+    default:  toxiproxy
+    default: /vagrant/vagrant/setup_services.sh: 5: /vagrant/vagrant/setup_services.sh: 
+    default: stop: not found
+    default: + 
+    default: true
+    default: + 
+    default: cp
+    default:  /vagrant/vagrant/toxiproxy.conf
+    default:  /etc/init/toxiproxy.conf
+    default: cp: cannot create regular file '/etc/init/toxiproxy.conf': No such file or directory
